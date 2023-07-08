@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/pen.css">
+  <title>Censo 2023</title>
+</head>
+
+<body>
+  <div id="contenedor">
+    <div id="cabezal" class="clearfix">
+      <img id="logo" src="https://p1.develotion.com/2023_03/logo.jpg" alt="logo">
+
+      <!-- NAV CENSISTA -->
+      <ul id="navCensista">
+
+        <li>
+          <a id="realizar-censo">Realizar CENSO</a>
+        </li>
+        <li>
+          <a id="censos-precompletados">Consultar censos pre completados</a>
+        </li>
+        <li>
+          <a id="reasignar-censistas">Reasignar censista</a>
+        </li>
+        <li>
+          <a id="estadisticas">Estadisticas</a>
+        </li>
+        <li>
+          <a id="cerrar-sesion">Cerrar sesion</a>
+        </li>
+      </ul>
+
+      <!-- NAV INVITADO -->
+      <ul id="navInvitado">
+        <li>
+          <a id="irAperfiles">Perfiles</a>
+        </li>
+        <li>
+          <a id="IrAlbuscador">Buscador</a>
+        </li>
+        <li>
+          <a id="verEstado">Ver estado</a>
+        </li>
+        <li>
+          <a id="listado-censados">Listado de censados</a>
+        </li>
+
+      </ul>
+      <div id="aux">
+        <p id="bienvenido"></p>
+      </div><!-- FIN AUX -->
+    </div><!-- FIN CABEZAL -->
+
+
+    <div id="contenido">
+      <div id="perfiles">
+        <!-- PERFILES -->
+        <div id="perfilC">
+          <h3>Perfil censista</h3>
+          <img src="img/icons8-grupo-de-usuario-doodle-96.png" alt="">
+        </div>
+        <div id="perfilI">
+          <h3>Perfil invitado</h3>
+          <img src="img/icons8-familia-emoji-96.png" alt="">
+        </div>
+
+      </div>
+
+      <div id="opcionesIngreso">
+          <input type="button" value="REGISTRARSE" id="btnIrARegistrarme">
+          <input type="button" value="INICIAR SESION" id="btnIrALogin">
+      </div>
+
+      <div id="registrarse">
+        <!-- REGISTRARSE -->
+        <h3>Registrarse</h3>
+        <label for="txtNombreCensista">Nombre completo</label>
+        <br>
+        <input type="text" id="txtNombreCensista">
+        <br>
+        <label for="txtNombreUsuario">Nombre de usuario</label>
+        <br>
+        <input type="text" id="txtNombreUsuario">
+        <br>
+        <label for="password1">Contraseña</label>
+        <br>
+        <input type="password" id="password">        
+        <br>
+        <br>
+        <input type="button" value="Crear usuario" id="btnRegistrarse">
+        <br>
+        <input type="button" value="Cancelar" id="btnCancelarRegistrarme">
+        <p id="aviso"></p>
+      </div>
+
+      <div id="formLoginCensista">
+        <!-- INICIAR SESION -->
+        <h3>Iniciar sesion</h3>
+        <label for="nombreUsuarioCensista">Nombre de usuario </label>
+        <br>
+        <input type="text" id="nombreUsuarioCensista">
+        <br>
+        <label for="claveCensista">Contraseña</label>
+        <br>
+        <input type="password" id="claveCensista">
+        <br>
+        <br>
+        <input type="button" value="Iniciar Sesion" id="btnLoginCensista">
+        <br>
+        <input type="button" value="Cancelar" id="btnCancelarLoginCensista">
+        <p id="avisoLogin"></p>
+      </div>
+
+      <div id="contenedor-form-censistas">
+        <!-- FORMULARIO CENSISTA -->
+        <h3 style="color: aliceblue;">FORMULARIO CENSO 2023</h3>
+      <div id="formCensistas">
+        <label for="nombre">Nombre y apellido</label>
+        <br>
+        <input type="text" id="nombre">
+        <br>
+        <label for="edad">Edad</label>
+        <br>
+        <input type="number" id="edad">
+        <br>
+        <label for="cedula">Cedula</label>
+        <br>
+        <input type="text" id="cedula" placeholder="Con puntos y guiones">
+        <br>
+        <p>Departamento de residencia</p>
+        <select id="slcDepartamentos">
+          <option value="seleccione">Seleccione un departamento</option>
+          <option value="1">Artigas</option>
+          <option value="2">Salto</option>
+          <option value="3">Paysandu</option>
+          <option value="4">Rio Negro</option>
+          <option value="5">Soriano</option>
+          <option value="6">Colonia</option>
+          <option value="7">Rivera</option>
+          <option value="8">Tacuarembo</option>
+          <option value="9">Durazno</option>
+          <option value="10">Flores</option>
+          <option value="11">Florida</option>
+          <option value="12">San Jose</option>
+          <option value="13">Canelones</option>
+          <option value="14">Montevideo</option>
+          <option value="15">Cerro Largo</option>
+          <option value="16">Treinta y tres</option>
+          <option value="17">Lavalleja</option>
+          <option value="18">Maldonado</option>
+          <option value="19">Rocha</option>
+        </select>
+        <br>
+        <p>Ocupacion</p>
+        <select id="slcOcupacion">
+          <option value="seleccione">Seleccione ocupacion</option>
+          <option value="dependiente">Dependiente</option>
+          <option value="independiente">Independiente</option>
+          <option value="estudiante">Estudiante</option>
+          <option value="no-trabaja">No trabaja</option>
+        </select>
+        <br>
+        <br>
+        <select id="validarCenso">
+          <option value="slc">Seleccione si valida el censo o no</option>
+          <option value="si">Validar</option>
+          <option value="no">Dejar formulario pre completado</option>
+        </select>
+        <br>
+        <br>
+        <input type="button" value="Enviar datos " id="btnEnviarDatosFormCensista">
+        <input type="button" value="Enviar datos invitado" id="btnEnviarDatosFormInvitado">
+        <input type="button" value="Enviar datos invitado" id="btnEnviarDatosFormInvitadoPrecompletado">
+        <p id="mensajeFormCensista"></p>
+      </div>
+      </div>
+
+      <div id="mensajeFormEnviado">
+        <h1>Formulado enviado con exito</h1>
+        <input type="button" value="Volver" id="btnVolverAlFormCensista">
+      </div>
+
+      <!-- CONSULTAR CENSOS PRECOMPLETADOS -->
+      <div id="contenedor-buscador">
+        <label for="buscador">Ingrese cedula de la persona</label>
+        <input type="text" id="buscador">
+        <input type="button" value="Buscar" id="btnBuscarPersona">
+        <br>
+        <p id="persona-no-encontrada"></p>
+
+      </div>
+      <!-- FORMULARIO PRECOMPELTADO -->
+      <div id="contenedor-form-precompletado">
+
+        <label for="nombreGuardado">Nombre y apellido</label>
+        <br>
+        <input type="text" id="nombreGuardado">
+        <br>
+        <label for="edadGuardada">Edad</label>
+        <br>
+        <input type="number" id="edadGuardada">
+        <br>
+        <label for="cedulaGuardada">Cedula</label>
+        <br>
+        <input type="text" id="cedulaGuardada">
+        <br>
+        <p>Departamento de residencia</p>
+        <select id="slcDepartamentoCargado">
+
+          <option value="1">Artigas</option>
+          <option value="2">Salto</option>
+          <option value="3">Paysandu</option>
+          <option value="4">Rio Negro</option>
+          <option value="5">Soriano</option>
+          <option value="6">Colonia</option>
+          <option value="7">Rivera</option>
+          <option value="8">Tacuarembo</option>
+          <option value="9">Durazno</option>
+          <option value="10">Flores</option>
+          <option value="11">Florida</option>
+          <option value="12">San Jose</option>
+          <option value="13">Canelones</option>
+          <option value="14">Montevideo</option>
+          <option value="15">Cerro Largo</option>
+          <option value="16">Treinta y tres</option>
+          <option value="17">Lavalleja</option>
+          <option value="18">Maldonado</option>
+          <option value="19">Rocha</option>
+        <br>
+        </select>
+        <br>
+        <p>Ocupacion</p>
+        <select id="slcOcupacionCargada">
+
+          <option value="dependiente">Dependiente</option>
+          <option value="independiente">Independiente</option>
+          <option value="estudiante">Estudiante</option>
+          <option value="no-trabaja">No trabaja</option>
+
+        </select>
+        <br>
+        <br>
+        <select id="validarCensoDesdePrecompletados">
+          <option value="slc">Seleccione si valida el censo o no</option>
+          <option value="si">Validar</option>
+          <option value="no">Dejar formulario pre completado</option>
+        </select>
+        <br>
+        <br>
+        <input type="button" value="Enviar datos" id="btnEnviarDatosFormCensistaDesdePrecompletados">
+        <p id="mensajeFormPrecompletado"></p>
+        
+      </div>
+
+      <!-- ESTADISTICAS -->
+      <div id="tablas-estadisticas">
+        <table id="tabla-totalcensados">
+          <thead>
+            <tr>
+              <th>TOTAL CENSADOS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="totalcensados"></td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <br>
+        <h3>Cantidad de personas censadas por departamento</h3>
+        <table id="tabla-pordepartamentos">
+          <thead>
+            <tr>
+              <th>Artigas</th>
+              <th>Salto</th>
+              <th>Paysandu</th>
+              <th>Rio Negro</th>
+              <th>Soriano</th>
+              <th>Colonia</th>
+              <th>Rivera</th>
+              <th>Tacuarembo</th>
+              <th>Durazno</th>
+              <th>Rocha</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="totalArtigas"></td>
+              <td id="totalSalto"></td>
+              <td id="totalPaysandu"></td>
+              <td id="totalRioNegro"></td>
+              <td id="totalSoriano"></td>
+              <td id="totalColonia"></td>
+              <td id="totalRivera"></td>
+              <td id="totalTacuarembo"></td>
+              <td id="totalDurazno"></td>
+              <td id="totalRocha"></td>
+            </tr>
+          </tbody>
+          <thead>
+            <tr>
+              <th>Flores</th>
+              <th>Florida</th>
+              <th>San Jose</th>
+              <th>Canelones</th>
+              <th>Montevideo</th>
+              <th>Cerro Largo</th>
+              <th>Treinta y tres</th>
+              <th>Lavalleja</th>
+              <th>Maldonado</th>
+              <th></th>   
+              </tr>
+          </thead>
+          <tbody>
+            <td id="totalFlores"></td>
+              <td id="totalFlorida"></td>
+              <td id="totalSanJose"></td>
+              <td id="totalCanelones"></td>
+              <td id="totalMontevideo"></td>
+              <td id="totalCerroLargo"></td>
+              <td id="totalTreitaytres"></td>
+              <td id="totalLavalleja"></td>
+              <td id="totalMaldonado"></td>
+              <td></td>
+          </tbody>
+          
+        </table>
+
+        <h3>Porcentaje de personas pendientes: </h3> 
+        <p id="porcentajePendientes"> </p>
+
+        <h3>Seleccione un departamento</h3>
+        <select id="dpto">
+          <option value="...">Seleccione..</option>
+          <option value="1">Artigas</option>
+          <option value="2">Salto</option>
+          <option value="3">Paysandu</option>
+          <option value="4">Rio Negro</option>
+          <option value="5">Soriano</option>
+          <option value="6">Colonia</option>
+          <option value="7">Rivera</option>
+          <option value="8">Tacuarembo</option>
+          <option value="9">Durazno</option>
+          <option value="10">Flores</option>
+          <option value="11">Florida</option>
+          <option value="12">San Jose</option>
+          <option value="13">Canelones</option>
+          <option value="14">Montevideo</option>
+          <option value="15">Cerro Largo</option>
+          <option value="16">Treinta y tres</option>
+          <option value="17">Lavalleja</option>
+          <option value="18">Maldonado</option>
+          <option value="19">Rocha</option>
+        </select>
+        <br>
+        <br>
+        <input type="button" value="Mostrar datos para departamento seleccionado" id="btnMostrarMayoresyMenores">
+        <p id="personas-mayores"></p>
+        <p id="personas-menores"></p>
+      </div>
+
+      <!--REASIGNAR CENSISTA-->
+      <div id="contenedor-reasignar-censista">
+
+        <p>Personas pendientes a censar</p>
+        <select id="slcpersonaEncontradaParaCensar">
+          
+        </select>
+        <br>
+        <p>Censistas disponibles</p>
+        <select id="slcCensistas">
+          
+        </select>
+        <br>
+        <br>
+        <input type="button" value="Reasignar censista" id="btnReasignarCensista">
+        <p id="mensajeError"></p>
+      </div>
+
+      <div id="reasignado-correctamente">
+
+        <h1 id="reasignado"></h1>
+        <input type="button" value="Volver" id="btnVolverAReasignar">
+
+      </div>
+
+      <!--BUSCADOR INVITADO-->
+      <div id="contenedor-buscador-invitado">
+        <label for="cedulaIngresada">Ingrese su cedula</label>
+        <input type="text" id="cedulaIngresada">
+        <br>
+        <input type="button" value="Buscar" id="btnBuscarInvitado">
+        <p id="mensajeBuscador"></p>
+      </div>
+      
+
+      <!--MENSAJE FORMULARIO INVITADO ENVIADO-->
+
+      <div id="mensajeFormInvitadoEnviado">
+        
+      </div>
+      <input type="button" value="Volver" id="btnVolverFormularioInvitado">
+
+      <div id="buscador-estado-invitado">
+
+        <label for="cedulaIngresadaBuscadorEstado">Ingrese su cedula para verificar el estado de su censo</label>
+        <input type="text" id="cedulaIngresadaBuscadorEstado">
+        <br>
+        <input type="button" value="Buscar" id="btnBuscarEstado">
+        <p id="mensajeBuscadorEstado"></p>
+
+      </div>
+
+      <!--LISTADO CENSOS PERFIL INVITADO-->
+
+        <table id="listado">
+          <thead>
+            <tr>
+              <th>Departamento</th>
+              <th>Estudian</th>
+              <th>No trabajan</th>
+              <th>Dependientes o independientes</th>
+              <th>Porcentaje total</th>
+            </tr>
+          </thead>
+          <tbody id="body-departamentos">
+
+          </tbody>
+          
+          
+        </table>
+        
+
+      <!--FIN ELEMENTOS-->
+    </div><!-- FIN CONTENIDO -->
+    <div id="pie">
+      <a href="https://www.ort.edu.uy">Footer</a>
+    </div><!-- FIN PIE -->
+  </div><!-- FIN CONTENEDOR -->
+
+  <script src="js/clases.js"></script>
+  <script src="js/ver.js"></script>
+  <script src="js/perfilinvitado.js"></script>
+  <script src="js/registrarse.js"></script>
+  <script src="js/libreria.js"></script>
+  <script src="js/form-censista.js"></script>
+  <script src="js/login-censista.js"></script>
+  <script src="js/censos-precompletados.js"></script>
+  <script src="js/reasignar-censista.js"></script>
+  <script src="js/estadisticas.js"></script>
+  <script src="js/ver-estado.js"></script>
+  <script src="js/listado.js"></script>
+</body>
+
+</html>
