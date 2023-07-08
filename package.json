@@ -1,0 +1,23 @@
+{
+  "name": "censo2023",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fran1o/App-Censo2023.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fran1o/App-Censo2023/issues"
+  },
+  "homepage": "https://github.com/fran1o/App-Censo2023#readme",
+  "dependencies": {
+    "gh-pages": "^5.0.0"
+  }
+}
